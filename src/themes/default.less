@@ -1,0 +1,173 @@
+// 默认浏览器 是 html 的 font-Size: 16px
+
+.wavy-gravy-bar-root-default {
+  .bubble-rotate-offset {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 40%,#71e65d ,#27b90e 66%,#27b90e 99%);
+    position: absolute;
+    border-radius: 100%;
+  }
+
+  .ball {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: relative;
+    // background: radial-gradient(circle at bottom,#81e8f6,#76deef 10%,#055194 80%,#062745 100%);
+
+    &:after {
+      content:"";
+      position: absolute;
+      border-radius: 100%;
+      z-index: 2;
+    }
+
+    &:after {
+      display: none;
+      top: 5%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      border-radius: 100%;
+      filter: blur(0.01rem);
+      transform: rotateZ(-30deg);
+    }
+
+    .shadow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle,rgba(0,0,0,0.4),rgba(0,0,0,0.1) 40%,transparent 50%);
+      transform: rotateX(90deg) translateZ(-5rem);
+      z-index: 1
+    }
+
+    &.bubble {
+      background: radial-gradient(circle at 50% 55%,rgba(240,245,255,0.9),rgba(240,245,255,0.9) 40%,rgba(225,238,255,0.8) 60%,rgba(43,130,255,0.4));
+
+      &:before {
+        filter: blur(0);
+        height: 80%;
+        width: 40%;
+        background: radial-gradient(circle at 130% 130%,rgba(255,255,255,0) 0,rgba(255,255,255,0) 46%,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0.8) 58%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 100%);
+        transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg)
+      }
+      &:after {
+        display: block;
+        background: radial-gradient(circle at 50% 80%,rgba(255,255,255,0),rgba(255,255,255,0) 74%,white 80%,white 84%,rgba(255,255,255,0) 100%)
+      }
+    }
+  }
+
+
+  .wavy-gravy-bar-container {
+    height: 8.75rem;
+    width: 8.75rem;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(0, -50%);
+    background: #020438;
+    border-radius: 100%;
+    overflow: hidden;
+
+
+    & .baseline {
+      z-index: 3;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      display: -webkit-flex;
+      align-items: baseline;
+    }
+
+    & .percent {
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 2rem;
+
+      & .percentB {
+        font-size: 1rem;
+      }
+    }
+
+    .baseline {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      display: -webkit-flex;
+    }
+
+    .water {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        -webkit-transform: translate(0, 100%);
+        transform: translate(0, 100%);
+        background: #66c93b;
+    }
+
+    .water_wave {
+        width: 200%;
+        position: absolute;
+        bottom: 100%;
+    }
+
+    .water_wave_back {
+        right: 0;
+        fill: #c9f1b8;
+        -webkit-animation: wave-back 1.4s infinite linear;
+        animation: wave-back 1.4s infinite linear;
+    }
+
+    .water_wave_front {
+        left: 0;
+        fill: #66c93b;
+        margin-bottom: -0.05rem;
+        -webkit-animation: wave-front .7s infinite linear;
+        animation: wave-front .7s infinite linear;
+    }
+  }
+
+}
+@-webkit-keyframes wave-front {
+    100% {
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+    }
+}
+@keyframes wave-front {
+    100% {
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+    }
+}
+@-webkit-keyframes wave-back {
+    100% {
+        -webkit-transform: translate(50%, 0);
+        transform: translate(50%, 0);
+    }
+}
+@keyframes wave-back {
+    100% {
+        -webkit-transform: translate(50%, 0);
+        transform: translate(50%, 0);
+    }
+}
