@@ -1,6 +1,6 @@
 {
   "name": "rc-react-svg-wavyGravyBar",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "react-svg-wavyGravyBar ui component for react",
   "keywords": [
     "react",
@@ -11,16 +11,17 @@
   "engines": {
     "node": ">=4.0.0"
   },
-  "homepage": "https://github.com/react-component/react-svg-wavyGravyBar",
+  "homepage": "https://github.com/TheOne1006/react-svg-wavyGravyBar",
   "author": "wubinjie12345@gmail.com",
-
-  "repository": "react-component/react-svg-wavyGravyBar",
-
-  "bugs": "https://github.com/react-component/react-svg-wavyGravyBar/issues",
-  "files":["lib", "assets/*.css"],
+  "repository": "TheOne1006/react-svg-wavyGravyBar",
+  "bugs": "https://github.com/TheOne1006/react-svg-wavyGravyBar/issues",
+  "files": [
+    "lib",
+    "assets/*.css"
+  ],
   "license": "MIT",
-  "main":"./lib/index",
-  "config":{
+  "main": "./lib/index",
+  "config": {
     "port": 8000
   },
   "scripts": {

@@ -3,25 +3,38 @@
 import * as React from 'react';
 import './themes/default.less';
 
-interface IProps {
+interface Iprops {
   theme?: string;
   className?: string;
   capacityStart?: number; // 容量初始位置
   capacityEnd?: number;   // 容量变化结束位置
   speed?: number;   // 变化速度, 毫秒
   step?: number;   // 步骤
+
+  fontColor?: string; // 字体颜色
+  percentFontSize?: string; // 文字大小, rem
+  percentBFontSize?: string; // 百分号大小, rem
+  waveColor?: string; // 浪花主要颜色
+  wavebackColor?: string; // 浪花背面的颜色
+  barDiameter?: string; // 圆球直径
 }
 
 /**
  * 执行漫水动画,直接操作 refs
  */
-export default class ReactSvgWavyGravyBar extends React.Component<IProps, any> {
+export default class ReactSvgWavyGravyBar extends React.Component<Iprops, any> {
   static defaultProps = {
     theme: 'default',
     capacityStart: 0,
     capacityEnd: 20,
     speed: 30,
     step: 3,
+    fontColor: '#ffffff',
+    percentFontSize: '3rem',
+    percentBFontSize: '1rem',
+    wavebackColor: '#c9f1b8',
+    waveColor: '#66c93b',
+    barDiameter: '8.75rem',
   };
   timer: any;
   refs: {
@@ -57,9 +70,44 @@ export default class ReactSvgWavyGravyBar extends React.Component<IProps, any> {
       clearTimeout(this.timer);
     }
   }
+
+  public buildStyles = () => {
+    const { fontColor,
+      percentFontSize,
+      wavebackColor,
+      waveColor,
+      barDiameter,
+      percentBFontSize } = this.props;
+
+    return {
+      percent: {
+        color: fontColor,
+        fontSize: percentFontSize,
+      },
+      percentB: {
+        fontSize: percentBFontSize,
+      },
+      waterWaveBack: {
+        fill: wavebackColor,
+      },
+      waterWaveFront: {
+        fill: waveColor,
+      },
+      water: {
+        background: waveColor,
+      },
+      container: {
+        height: barDiameter,
+        width: barDiameter,
+      },
+    };
+  }
   public render () {
     const { theme, className } = this.props;
     const rootClassName = className ? `${className} wavy-gravy-bar-root-${theme}` : `wavy-gravy-bar-root-${theme}`;
+
+    const styles = this.buildStyles();
+
     return (
       <div className={rootClassName}>
         <svg
@@ -78,21 +126,29 @@ export default class ReactSvgWavyGravyBar extends React.Component<IProps, any> {
             {/* tslint:enable */}
           </symbol>
         </svg>
-        <div className="wavy-gravy-bar-container shadow">
+        <div className="wavy-gravy-bar-container shadow" style={styles.container}>
           <div className="bubble-rotate-offset">
             <div className="ball bubble" />
           </div>
-          <div className="percent">
+          <div className="percent" style={styles.percent}>
               <div className="baseline">
                 <div className="percentNum" ref="wavyGravyBarCount">0</div>
-                <div className="percentB">%</div>
+                <div className="percentB" style={styles.percentB}>%</div>
               </div>
           </div>
-          <div ref="wavyGravyBarWater" className="water">
-              <svg viewBox="0 0 560 19" className="water_wave water_wave_back">
+          <div ref="wavyGravyBarWater" className="water" style={styles.water}>
+              <svg
+                viewBox="0 0 560 19"
+                className="water_wave water_wave_back"
+                style={styles.waterWaveBack}
+              >
                   <use xlinkHref="#wavy-gravy-materials"></use>
               </svg>
-              <svg viewBox="0 0 560 19" className="water_wave water_wave_front">
+              <svg
+                viewBox="0 0 560 19"
+                className="water_wave water_wave_front"
+                style={styles.waterWaveFront}
+              >
                   <use xlinkHref="#wavy-gravy-materials"></use>
               </svg>
           </div>
