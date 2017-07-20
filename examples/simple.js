@@ -30,7 +30,7 @@ webpackJsonp([0,1],[
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	// use jsx to render html, do not modify simple.html
-	ReactDOM.render(React.createElement(_src2.default, null), document.getElementById('__react-content'));
+	ReactDOM.render(React.createElement(_src2.default, { wavebackColor: "#c9f1b8", waveColor: "#66c93b", barDiameter: "8.75rem" }), document.getElementById('__react-content'));
 
 /***/ }),
 /* 2 */
@@ -21775,6 +21775,7 @@ webpackJsonp([0,1],[
 	                wavebackColor = _this$props.wavebackColor,
 	                waveColor = _this$props.waveColor,
 	                barDiameter = _this$props.barDiameter,
+	                bubbleRotateBg = _this$props.bubbleRotateBg,
 	                percentBFontSize = _this$props.percentBFontSize;
 	
 	            return {
@@ -21797,6 +21798,9 @@ webpackJsonp([0,1],[
 	                container: {
 	                    height: barDiameter,
 	                    width: barDiameter
+	                },
+	                bubbleRotate: {
+	                    background: bubbleRotateBg
 	                }
 	            };
 	        };
@@ -21843,7 +21847,7 @@ webpackJsonp([0,1],[
 	
 	        var rootClassName = className ? className + ' wavy-gravy-bar-root-' + theme : 'wavy-gravy-bar-root-' + theme;
 	        var styles = this.buildStyles();
-	        return React.createElement("div", { className: rootClassName }, React.createElement("svg", { version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", x: "0px", y: "0px" }, React.createElement("symbol", { id: "wavy-gravy-materials" }, React.createElement("path", { d: "M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z" }), React.createElement("path", { d: "M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z" }), React.createElement("path", { d: "M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z" }), React.createElement("path", { d: "M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z" }))), React.createElement("div", { className: "wavy-gravy-bar-container shadow", style: styles.container }, React.createElement("div", { className: "bubble-rotate-offset" }, React.createElement("div", { className: "ball bubble" })), React.createElement("div", { className: "percent", style: styles.percent }, React.createElement("div", { className: "baseline" }, React.createElement("div", { className: "percentNum", ref: "wavyGravyBarCount" }, "0"), React.createElement("div", { className: "percentB", style: styles.percentB }, "%"))), React.createElement("div", { ref: "wavyGravyBarWater", className: "water", style: styles.water }, React.createElement("svg", { viewBox: "0 0 560 19", className: "water_wave water_wave_back", style: styles.waterWaveBack }, React.createElement("use", { xlinkHref: "#wavy-gravy-materials" })), React.createElement("svg", { viewBox: "0 0 560 19", className: "water_wave water_wave_front", style: styles.waterWaveFront }, React.createElement("use", { xlinkHref: "#wavy-gravy-materials" })))));
+	        return React.createElement("div", { className: rootClassName }, React.createElement("svg", { version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", x: "0px", y: "0px" }, React.createElement("symbol", { id: "wavy-gravy-materials" }, React.createElement("path", { d: "M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z" }), React.createElement("path", { d: "M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z" }), React.createElement("path", { d: "M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z" }), React.createElement("path", { d: "M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z" }))), React.createElement("div", { className: "wavy-gravy-bar-container shadow", style: styles.container }, React.createElement("div", { className: "bubble-rotate-offset", style: styles.bubbleRotate }, React.createElement("div", { className: "ball bubble" })), React.createElement("div", { className: "percent", style: styles.percent }, React.createElement("div", { className: "baseline" }, React.createElement("div", { className: "percentNum", ref: "wavyGravyBarCount" }, "0"), React.createElement("div", { className: "percentB", style: styles.percentB }, "%"))), React.createElement("div", { ref: "wavyGravyBarWater", className: "water", style: styles.water }, React.createElement("svg", { viewBox: "0 0 560 19", className: "water_wave water_wave_back", style: styles.waterWaveBack }, React.createElement("use", { xlinkHref: "#wavy-gravy-materials" })), React.createElement("svg", { viewBox: "0 0 560 19", className: "water_wave water_wave_front", style: styles.waterWaveFront }, React.createElement("use", { xlinkHref: "#wavy-gravy-materials" })))));
 	    };
 	
 	    return ReactSvgWavyGravyBar;
@@ -21862,7 +21866,8 @@ webpackJsonp([0,1],[
 	    percentBFontSize: '1rem',
 	    wavebackColor: '#c9f1b8',
 	    waveColor: '#66c93b',
-	    barDiameter: '8.75rem'
+	    barDiameter: '8.75rem',
+	    bubbleRotateBg: 'radial-gradient(circle at 50% 40%,#71e65d ,#27b90e 66%,#27b90e 99%)'
 	};
 	module.exports = exports['default'];
 
