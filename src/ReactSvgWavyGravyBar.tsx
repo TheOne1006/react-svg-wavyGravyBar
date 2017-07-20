@@ -17,6 +17,7 @@ interface Iprops {
   waveColor?: string; // 浪花主要颜色
   wavebackColor?: string; // 浪花背面的颜色
   barDiameter?: string; // 圆球直径
+  bubbleRotateBg?: string; // 球的前景色
 }
 
 /**
@@ -35,6 +36,7 @@ export default class ReactSvgWavyGravyBar extends React.Component<Iprops, any> {
     wavebackColor: '#c9f1b8',
     waveColor: '#66c93b',
     barDiameter: '8.75rem',
+    bubbleRotateBg: 'radial-gradient(circle at 50% 40%,#71e65d ,#27b90e 66%,#27b90e 99%)',
   };
   timer: any;
   refs: {
@@ -77,6 +79,7 @@ export default class ReactSvgWavyGravyBar extends React.Component<Iprops, any> {
       wavebackColor,
       waveColor,
       barDiameter,
+      bubbleRotateBg,
       percentBFontSize } = this.props;
 
     return {
@@ -99,6 +102,9 @@ export default class ReactSvgWavyGravyBar extends React.Component<Iprops, any> {
       container: {
         height: barDiameter,
         width: barDiameter,
+      },
+      bubbleRotate: {
+        background: bubbleRotateBg,
       },
     };
   }
@@ -127,7 +133,7 @@ export default class ReactSvgWavyGravyBar extends React.Component<Iprops, any> {
           </symbol>
         </svg>
         <div className="wavy-gravy-bar-container shadow" style={styles.container}>
-          <div className="bubble-rotate-offset">
+          <div className="bubble-rotate-offset" style={styles.bubbleRotate}>
             <div className="ball bubble" />
           </div>
           <div className="percent" style={styles.percent}>
