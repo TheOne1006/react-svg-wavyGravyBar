@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import 'rc-react-svg-wavyGravyBar/assets/index.less';
+import 'react-svg-wavy-gravy-bar/assets/index.less';
 import ReactSvgWavyGravyBar from '../src/';
 
 ReactDOM.render(<ReactSvgWavyGravyBar

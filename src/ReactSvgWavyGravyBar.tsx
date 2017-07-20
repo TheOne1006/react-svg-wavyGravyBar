@@ -3,7 +3,7 @@
 import * as React from 'react';
 import './themes/default.less';
 
-interface Iprops {
+export interface Iprops {
   theme?: string;
   className?: string;
   capacityStart?: number; // 容量初始位置
@@ -23,7 +23,7 @@ interface Iprops {
 /**
  * 执行漫水动画,直接操作 refs
  */
-export default class ReactSvgWavyGravyBar extends React.Component<Iprops, any> {
+export class ReactSvgWavyGravyBar extends React.Component<Iprops, any> {
   static defaultProps = {
     theme: 'default',
     capacityStart: 0,
@@ -51,7 +51,6 @@ export default class ReactSvgWavyGravyBar extends React.Component<Iprops, any> {
     this.timer = setInterval(
       () => {
         curCapacity += step;
-        let isLast = false;
 
         // 防止 step 过大, 修正 curCapacity
         if (curCapacity >= capacityEnd) {
@@ -59,7 +58,7 @@ export default class ReactSvgWavyGravyBar extends React.Component<Iprops, any> {
           clearTimeout(this.timer);
         }
 
-        wavyGravyBarCountRef.innerText = curCapacity.toString();
+        wavyGravyBarCountRef.innerText = String(curCapacity);
         wavyGravyBarWaterRef.style.transform = `translate(0, ${100 - curCapacity}%)`;
       },
       speed,
@@ -163,3 +162,5 @@ export default class ReactSvgWavyGravyBar extends React.Component<Iprops, any> {
     );
   }
 }
+
+export default ReactSvgWavyGravyBar;
