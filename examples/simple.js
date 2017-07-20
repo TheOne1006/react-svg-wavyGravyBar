@@ -19,9 +19,9 @@ webpackJsonp([0,1],[
 	
 	var ReactDOM = _interopRequireWildcard(_reactDom);
 	
-	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"rc-react-svg-wavyGravyBar/assets/index.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	__webpack_require__(185);
 	
-	var _src = __webpack_require__(185);
+	var _src = __webpack_require__(186);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
@@ -1254,7 +1254,7 @@ webpackJsonp([0,1],[
 
 /***/ }),
 /* 16 */
-[188, 7],
+[189, 7],
 /* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6877,7 +6877,7 @@ webpackJsonp([0,1],[
 
 /***/ }),
 /* 56 */
-[188, 41],
+[189, 41],
 /* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21707,6 +21707,12 @@ webpackJsonp([0,1],[
 
 /***/ }),
 /* 185 */
+/***/ (function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21715,7 +21721,7 @@ webpackJsonp([0,1],[
 	  value: true
 	});
 	
-	var _ReactSvgWavyGravyBar = __webpack_require__(186);
+	var _ReactSvgWavyGravyBar = __webpack_require__(187);
 	
 	var _ReactSvgWavyGravyBar2 = _interopRequireDefault(_ReactSvgWavyGravyBar);
 	
@@ -21726,7 +21732,7 @@ webpackJsonp([0,1],[
 	module.exports = exports['default'];
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21740,7 +21746,7 @@ webpackJsonp([0,1],[
 	
 	var React = _interopRequireWildcard(_react);
 	
-	__webpack_require__(187);
+	__webpack_require__(188);
 	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
@@ -21864,13 +21870,9 @@ webpackJsonp([0,1],[
 	exports.default = ReactSvgWavyGravyBar;
 
 /***/ }),
-/* 187 */
-/***/ (function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ }),
 /* 188 */
+185,
+/* 189 */
 /***/ (function(module, exports, __webpack_require__, __webpack_module_template_argument_0__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
